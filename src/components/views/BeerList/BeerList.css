@@ -1,0 +1,13 @@
+.beerlist-wrap {
+    width: 100vw;
+    padding-top: 10px;
+}
+
+.beerlist-container {
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 1px solid orange;
+}

@@ -1,8 +1,9 @@
 import React from 'react'
 import './App.css';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Header from './components/common/Header/Header'
+import Header from './components/common/Header/Header';
+import BeerList from './components/views/BeerList/BeerList';
 
 function App() {
   
@@ -10,6 +11,11 @@ function App() {
     <Router>
       <Header />
 
+      <div>
+        <Switch>
+          <Route path="/beer" component={ BeerList }/>
+        </Switch>
+      </div>
     </Router>
   );
 }
