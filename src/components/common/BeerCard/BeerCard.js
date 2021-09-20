@@ -11,21 +11,29 @@ function BeerCard() {
         setMouseX(e.screenX);
     }
 
+    const rotateClockwise = () => {
+        if(ImageIndex < 25) {
+            setImageIndex(ImageIndex + 1);
+        }else if(ImageIndex === 25) {
+            setImageIndex(1);
+        }
+    }
+
+    const rotateAntiColockwise = () => {
+        if(ImageIndex > 1) {
+            setImageIndex(ImageIndex - 1);
+        }else if(ImageIndex === 1){
+            setImageIndex(24);
+        }
+    }
+
     const detectMouseMove = (e) => {
         if((MouseX + 10) < e.screenX) {
-            if(ImageIndex < 25) {
-                setImageIndex(ImageIndex + 1);
-            }else if(ImageIndex === 25) {
-                setImageIndex(0);
-            }
+            rotateClockwise();
             setMouseX(e.screenX);
         }
         if((MouseX - 10) > e.screenX) {
-            if(ImageIndex > 1) {
-                setImageIndex(ImageIndex - 1);
-            }else if(ImageIndex === 1){
-                setImageIndex(24);
-            }
+            rotateAntiColockwise();
             setMouseX(e.screenX);
         }
     }
