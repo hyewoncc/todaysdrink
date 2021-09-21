@@ -14,8 +14,12 @@ function BeerCard() {
     const [ImageIndex, setImageIndex] = useState(1);
     const [RotationState, setRotationState] = useState(false);
     const [RotationDirection, setRotationDirection] = useState(0);
+    const [EnterTime, setEnterTime] = useState(new Date());
+    const [LeaveTime, setLeaveTime] = useState(new Date());
+    const [TimeGap, setTimeGap] = useState(0);
 
     const initMousePosition = (e) => {
+        setEnterTime(new Date());
         setRotationState(false);
         setMouseX(e.screenX);
     }
@@ -50,6 +54,8 @@ function BeerCard() {
     }
 
     const runAutoRotation = () => {
+        setLeaveTime(new Date());
+        setTimeGap(EnterTime.getTime() - LeaveTime.getTime());
         setRotationState(true);
     }
     
@@ -59,7 +65,7 @@ function BeerCard() {
                 RotationDirection === 1 ? rotateClockwise() : rotateAntiClockwise();
             }
         }
-        const rotate = setInterval(autoRotation, 100);
+        const rotate = setInterval(autoRotation, Math.round(TimeGap/8));
         return () => { clearInterval(rotate) };
     }, [RotationState, ImageIndex]);
 
@@ -67,7 +73,7 @@ function BeerCard() {
 
     return (
         <div className="beercard-wrap">
-            <div className="beercard" onMouseOver={initMousePosition} onMouseMove={detectMouseDirection} onMouseOut={runAutoRotation}>
+            <div className="beercard" onMouseEnter={initMousePosition} onMouseMove={detectMouseDirection} onMouseLeave={runAutoRotation}>
                 <img src={img_url + ImageIndex + '.png'}/>
             </div>
         </div>
