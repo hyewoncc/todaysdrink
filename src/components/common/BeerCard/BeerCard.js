@@ -73,8 +73,10 @@ function BeerCard() {
 
     return (
         <div className="beercard-wrap">
-            <div className="beercard" onMouseEnter={initMousePosition} onMouseMove={detectMouseDirection} onMouseLeave={runAutoRotation}>
-                <img src={img_url + ImageIndex + '.png'}/>
+            <div className="beercard">
+                <div className="beerimage-wrap" onMouseEnter={initMousePosition} onMouseMove={detectMouseDirection} onMouseLeave={runAutoRotation}>
+                    <img src={img_url + ImageIndex + '.png'}/>
+                </div>
             </div>
         </div>
     )
