@@ -54,6 +54,7 @@ function BeerCard() {
     }
 
     const runAutoRotation = () => {
+        setTimeGap(0);
         setLeaveTime(new Date());
         setTimeGap(EnterTime.getTime() - LeaveTime.getTime());
         setRotationState(true);
@@ -65,9 +66,23 @@ function BeerCard() {
                 RotationDirection === 1 ? rotateClockwise() : rotateAntiClockwise();
             }
         }
-        const rotate = setInterval(autoRotation, Math.round(TimeGap/8));
-        return () => { clearInterval(rotate) };
+        const rotate = setInterval(autoRotation, Math.round(TimeGap/10));
+        return () => { clearInterval(rotate);};
     }, [RotationState, ImageIndex]);
+
+    useEffect(() => {
+        makeSlow();
+        return () => { }
+    }, [ImageIndex])
+
+    const makeSlow = () => {
+        setTimeGap(Math.round(TimeGap * 1.1));
+        console.log(TimeGap);
+        if(TimeGap > 4000){
+            setRotationState(!RotationState);
+            setTimeGap(0);
+        }
+    }
 
     const img_url = 'images/beer_small/singha/singha';
 
