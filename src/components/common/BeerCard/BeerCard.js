@@ -66,7 +66,7 @@ function BeerCard() {
                 RotationDirection === 1 ? rotateClockwise() : rotateAntiClockwise();
             }
         }
-        const rotate = setInterval(autoRotation, Math.round(TimeGap/10));
+        const rotate = setInterval(autoRotation, Math.round(TimeGap/10) + 1);
         return () => { clearInterval(rotate);};
     }, [RotationState, ImageIndex]);
 
@@ -77,7 +77,6 @@ function BeerCard() {
 
     const makeSlow = () => {
         setTimeGap(Math.round(TimeGap * 1.1));
-        console.log(TimeGap);
         if(TimeGap > 4000){
             setRotationState(!RotationState);
             setTimeGap(0);
