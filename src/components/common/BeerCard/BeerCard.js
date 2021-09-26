@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { BEERCARD_IMG_URL } from '../../Config';
 import './BeerCard.css';
 
 function BeerCard() {
@@ -83,13 +84,11 @@ function BeerCard() {
         }
     }
 
-    const img_url = 'images/beer_small/singha/singha';
-
     return (
         <div className="beercard-wrap">
             <div className="beercard">
                 <div className="beerimage-wrap" onMouseEnter={initMousePosition} onMouseMove={detectMouseDirection} onMouseLeave={runAutoRotation}>
-                    <img src={img_url + ImageIndex + '.png'}/>
+                    <img src={BEERCARD_IMG_URL + ImageIndex + '.png'}/>
                 </div>
             </div>
         </div>

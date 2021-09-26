@@ -18,7 +18,9 @@ function BeerList() {
         fetch(endpoint)
             .then(response => response.json())
             .then(response => {
-                setBeers([...Beers, ...response.results.beerDtoes])
+                setBeers([...Beers, ...response._embedded.beerDtoes]);
+            }, (err) => {
+                console.error('Fetch failed : ' + err);
             })
     }
 
