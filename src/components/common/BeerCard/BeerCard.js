@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { BEERCARD_IMG_URL } from '../../Config';
+import { Link } from 'react-router-dom';
 import './BeerCard.css';
 
-function BeerCard() {
+function BeerCard(props) {
 
     /**
      * TODO
@@ -87,9 +88,11 @@ function BeerCard() {
     return (
         <div className="beercard-wrap">
             <div className="beercard">
-                <div className="beerimage-wrap" onMouseEnter={initMousePosition} onMouseMove={detectMouseDirection} onMouseLeave={runAutoRotation}>
-                    <img src={BEERCARD_IMG_URL + ImageIndex + '.png'}/>
-                </div>
+                <Link to = {`/beers/${props.beerId}`}>
+                    <div className="beerimage-wrap" onMouseEnter={initMousePosition} onMouseMove={detectMouseDirection} onMouseLeave={runAutoRotation}>
+                        <img src={BEERCARD_IMG_URL + '/' + props.beerName + '/' + props.beerName + ImageIndex + '.png'}/>
+                    </div>
+                </Link>
             </div>
         </div>
     )

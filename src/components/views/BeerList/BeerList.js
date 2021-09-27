@@ -28,7 +28,12 @@ function BeerList() {
         <div className="beerlist-wrap">
             <div className="beerlist-container">
                 {Beers && Beers.map((beer, index) => (
-                    <BeerCard />
+                    <React.Fragment key = {index}>
+                        <BeerCard 
+                            beerId = {beer.id}
+                            beerName = {beer.name}
+                        />
+                    </React.Fragment>
                 ))}
             </div>
         </div>
