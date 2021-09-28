@@ -68,6 +68,11 @@ function BeerCard(props) {
                 RotationDirection === 1 ? rotateClockwise() : rotateAntiClockwise();
             }
         }
+
+        if(Math.round(TimeGap/10) === 0) {
+            setTimeGap(10);
+        }
+
         const rotate = setInterval(autoRotation, Math.round(TimeGap/10) + 1);
         return () => { clearInterval(rotate);};
     }, [RotationState, ImageIndex]);
