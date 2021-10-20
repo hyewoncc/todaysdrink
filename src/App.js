@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './components/common/Header/Header';
 import BeerList from './components/views/BeerList/BeerList';
 import BeerDetail from './components/views/BeerDetail/BeerDetail';
+import Footer from './components/common/Footer/Footer';
 
 function App() {
   
@@ -18,6 +19,8 @@ function App() {
           <Route exact path="/beers/:beerId" component={ BeerDetail }/>
         </Switch>
       </div>
+
+      <Footer />
     </Router>
   );
 }
