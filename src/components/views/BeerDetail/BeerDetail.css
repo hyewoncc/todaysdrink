@@ -1,0 +1,34 @@
+.info-wrap {
+    width: 100vw;
+    height: 100vw;
+    padding-top: 24px;
+    border: 1px solid green;
+}
+
+.info-container {
+    width: 80vw;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    border: 1px solid blue;
+}
+
+.beer-image {
+    width: 480px;
+    height: 480px;
+    border: 1px solid orchid;
+}
+
+.beer-info {
+    width: 360px;
+    height: 480px;
+    border: 1px solid peru;
+}
+
+.comment-container {
+    margin-top: 16px;
+    width: 100%;
+    height: 320px;
+    border: 1px solid mediumaquamarine;
+}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { API_URL } from '../../Config';
+import './BeerDetail.css';
 
 function BeerDetail(props) {
 
@@ -16,17 +17,17 @@ function BeerDetail(props) {
     }, [])
 
     return (
-        <div>
+        <div className="info-wrap">
             <div className="info-container">
                 <div className="beer-image">
-                    <span>{Beer}</span>
+
                 </div>
                 <div className="beer-info">
 
                 </div>
-            </div>
-            <div className="comment-container">
+                <div className="comment-container">
 
+                </div>
             </div>
         </div>
     )
