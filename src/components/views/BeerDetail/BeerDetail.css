@@ -1,27 +1,39 @@
 .info-wrap {
     width: 100vw;
-    height: 100vw;
     padding-top: 24px;
     border: 1px solid green;
 }
 
 .info-container {
-    width: 80vw;
-    height: 100%;
+    width: max(80vw, 840px);
     margin: auto;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     border: 1px solid blue;
 }
 
+.low {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.low-text {
+    width: 100%;
+}
+
 .beer-image {
-    width: 480px;
+    width: max(60%, 480px);
     height: 480px;
     border: 1px solid orchid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .beer-info {
-    width: 360px;
+    width: max(40%, 360px);
     height: 480px;
     border: 1px solid peru;
 }
