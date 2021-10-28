@@ -93,7 +93,9 @@ function BeerCard(props) {
     return (
         <div className="beercard-wrap">
             <div className="beercard">
-                <Link to = {`/beers/${props.beerId}`}>
+                <Link to = {{
+                    pathname: `/beers/${props.beerId}`,
+                    state: { apiLink : props.apiLink }}}>
                     <div className="beerimage-wrap" onMouseEnter={initMousePosition} onMouseMove={detectMouseDirection} onMouseLeave={runAutoRotation}>
                         <img src={BEERCARD_IMG_URL + '/' + props.beerName + '/' + props.beerName + ImageIndex + '.png'}/>
                     </div>

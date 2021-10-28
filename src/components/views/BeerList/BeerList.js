@@ -30,6 +30,7 @@ function BeerList() {
                 {Beers && Beers.map((beer, index) => (
                     <React.Fragment key = {index}>
                         <BeerCard 
+                            apiLink = {beer._links.self} 
                             beerId = {beer.id}
                             beerName = {beer.name}
                         />
