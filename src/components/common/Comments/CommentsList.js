@@ -14,7 +14,9 @@ function CommentsList(props) {
         fetch(endpoint)
             .then(response => response.json())
             .then(response => {
-                setComments(response._embedded.commentDtoes);
+                if(response._embedded){
+                    setComments(response._embedded.commentDtoes);
+                }
         })
     }
 
@@ -26,6 +28,11 @@ function CommentsList(props) {
                         <p>{comment.name} : {comment.content}</p>
                     </div>
                 ))}
+                {!Comments.length && 
+                    <div className="comment low">
+                        <p>첫 댓글을 등록해보세요</p>
+                    </div>
+                }
             </div>
             <div className="new-comment low wrap">
                 <div>
