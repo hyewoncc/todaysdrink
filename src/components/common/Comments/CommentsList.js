@@ -3,9 +3,13 @@ import { API_URL } from '../../Config';
 import './CommentsList.css';
 
 function CommentsList(props) {
+    const [Name, setName] = useState("");
+    const [Content, setContent] = useState("");
     const [Comments, setComments] = useState([]);
+    const [BeerId, setBeerId] = useState(0);
 
     useEffect(() => {
+        setBeerId(props.beerId);
         const endpoint = `${API_URL}comments/?beerId=${props.beerId}`;
         fetchComments(endpoint);
     }, [])
@@ -15,8 +19,36 @@ function CommentsList(props) {
             .then(response => response.json())
             .then(response => {
                 if(response._embedded){
-                    setComments(response._embedded.commentDtoes);
+                    console.log(response);
+                    setComments(...[response._embedded.commentDtoes]);
                 }
+        })
+    }
+
+    const onNameHandler = (e) => {
+        setName(e.currentTarget.value);
+    }
+
+    const onContentHandler = (e) => {
+        setContent(e.currentTarget.value);
+    }
+
+    const onCommentSubmitHandler = (e) => {
+        e.preventDefault();
+
+        let body = {
+            beerId: BeerId,
+            name: Name,
+            content: Content
+        }
+
+        const endpoint = `${API_URL}comments/?beerId=${props.beerId}`;
+        fetch(endpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(body)
         })
     }
 
@@ -38,12 +70,12 @@ function CommentsList(props) {
                 <div>
 
                 </div>
-                <input type="text" className="nickname-input"></input>
+                <input type="text" className="nickname-input" onChange={onNameHandler}></input>
                 <div>
                     
                 </div>
-                <input type="text" className="comment-input"></input>
-                <button>등록</button>
+                <input type="text" className="comment-input" onChange={onContentHandler}></input>
+                <button onClick={onCommentSubmitHandler}>등록</button>
             </div>
         </div>
     )
