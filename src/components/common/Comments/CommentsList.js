@@ -50,6 +50,11 @@ function CommentsList(props) {
             },
             body: JSON.stringify(body)
         })
+            .then(response => {
+                if(response.status == 204){
+                    fetchComments(endpoint)
+                }
+            })
     }
 
     return (
