@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { BEERCARD_IMG_URL } from '../../Config';
 import { Link } from 'react-router-dom';
+import Like from '../../common/Like/Like';
 import './BeerCard.css';
 
 function BeerCard(props) {
@@ -100,6 +101,7 @@ function BeerCard(props) {
                         <img src={BEERCARD_IMG_URL + '/' + props.beerName + '/' + props.beerName + ImageIndex + '.png'}/>
                     </div>
                 </Link>
+                <Like/>
             </div>
         </div>
     )

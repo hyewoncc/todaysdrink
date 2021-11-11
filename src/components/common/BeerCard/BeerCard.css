@@ -17,3 +17,7 @@
 .beerimage-wrap {
     border: 1px solid red;
 }
+
+.like-wrap {
+    position: absolute;
+}
