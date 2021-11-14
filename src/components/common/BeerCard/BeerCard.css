@@ -20,4 +20,13 @@
 
 .like-wrap {
     position: absolute;
+    margin-left: 144px;
+}
+
+.btn.like.off {
+    background-color: lightgray;
+}
+
+.btn.like.on {
+    background-color: pink;
 }

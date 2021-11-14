@@ -11,7 +11,8 @@ function Like() {
 
     return (
         <div className="like-wrap">
-            <button>좋아요</button>
+            <button className={"btn like " + (Like ? "on" : "off")} 
+                    onClick={toggleLike}>하트</button>
         </div>
     )
 }
