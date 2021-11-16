@@ -10,7 +10,7 @@ function CommentsList(props) {
 
     useEffect(() => {
         setBeerId(props.beerId);
-        const endpoint = `${API_URL}comments/?beerId=${props.beerId}`;
+        const endpoint = props.apiLink.href;
         fetchComments(endpoint);
     }, [])
 
@@ -19,7 +19,6 @@ function CommentsList(props) {
             .then(response => response.json())
             .then(response => {
                 if(response._embedded){
-                    console.log(response);
                     setComments(...[response._embedded.commentDtoes]);
                 }
         })
@@ -42,7 +41,7 @@ function CommentsList(props) {
             content: Content
         }
 
-        const endpoint = `${API_URL}comments/?beerId=${props.beerId}`;
+        const endpoint = props.apiLink.href;
         fetch(endpoint, {
             method: 'POST',
             headers: {

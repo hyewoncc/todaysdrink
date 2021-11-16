@@ -50,7 +50,8 @@ function BeerDetail(props) {
                     <div className="comment-container">
                         {Beer.id && 
                             <CommentsList 
-                                beerId = {Beer.id}
+                                beerId = {Beer.id} 
+                                apiLink = {Beer._links.comments}
                             />
                         }
                     </div>
