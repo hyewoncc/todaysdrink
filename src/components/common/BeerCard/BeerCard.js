@@ -96,13 +96,13 @@ function BeerCard(props) {
             <div className="beercard">
                 <Link to = {{
                     pathname: `/beers/${props.beerId}`,
-                    state: { apiLink : props.apiLink }}}>
+                    state: { apiLink : props.apiLinks.self }}}>
                     <div className="beerimage-wrap" onMouseEnter={initMousePosition} onMouseMove={detectMouseDirection} onMouseLeave={runAutoRotation}>
                         <img src={BEERCARD_IMG_URL + '/' + props.beerName + '/' + props.beerName + ImageIndex + '.png'}/>
                     </div>
                 </Link>
                 <Like
-                    apiLink = {props.likeApiLink}
+                    apiLinks = {props.apiLinks}
                 />
             </div>
         </div>
