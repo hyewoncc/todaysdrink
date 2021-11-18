@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { API_URL } from '../../Config';
+import Like from '../../common/Like/Like';
 import './CommentsList.css';
 
 function CommentsList(props) {
@@ -62,6 +63,11 @@ function CommentsList(props) {
                 {Comments && Comments.map((comment, index) => (
                     <div className="comment low">
                         <p>{comment.name} : {comment.content}</p>
+                        <div className="comment-like">
+                            <Like
+                                apiLinks = {comment._links}
+                            />
+                        </div>
                     </div>
                 ))}
                 {!Comments.length && 
@@ -70,7 +76,7 @@ function CommentsList(props) {
                     </div>
                 }
             </div>
-            <div className="new-comment low wrap">
+            <div className="new comment low wrap">
                 <div>
 
                 </div>
