@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { withRouter } from 'react-router-dom';
 import BeerCard from '../../common/BeerCard/BeerCard';
-import Like from '../../common/Like/Like';
 import { API_URL } from '../../Config';
 import './BeerList.css';
 

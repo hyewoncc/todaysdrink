@@ -101,9 +101,11 @@ function BeerCard(props) {
                         <img src={BEERCARD_IMG_URL + '/' + props.beerName + '/' + props.beerName + ImageIndex + '.png'}/>
                     </div>
                 </Link>
-                <Like
-                    apiLinks = {props.apiLinks}
-                />
+                <div className="beer-like">
+                    <Like
+                        apiLinks = {props.apiLinks}
+                    />
+                </div>
             </div>
         </div>
     )

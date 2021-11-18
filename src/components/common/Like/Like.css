@@ -1,0 +1,21 @@
+.like-wrap {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn.like {
+    width: 100%;
+}
+
+.btn.like.off {
+    background-color: lightgray;
+}
+
+.btn.like.on {
+    background-color: pink;
+}
+
+.like-tag {
+    width: 80px;
+}

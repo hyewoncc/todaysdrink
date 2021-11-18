@@ -2,10 +2,19 @@
     width: 100%;
 }
 
-.new-comment {
+.new {
     height: 24px;
 }
 
 .comment-input {
-    width: 80%;
+}
+
+.comment.low {
+    display: flex;
+    justify-content: space-between;
+}
+
+.comments.low.wrap {
+    height: 304px;
+    overflow: auto;
 }
