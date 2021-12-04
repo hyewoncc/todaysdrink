@@ -53,3 +53,9 @@
     flex-wrap: wrap;
     border: 1px solid mediumaquamarine;
 }
+
+.recommend-container {
+    display: flex;
+    white-space: nowrap;
+    overflow: auto;
+}
