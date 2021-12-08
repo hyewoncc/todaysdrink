@@ -30,6 +30,10 @@
     width: 100%;
 }
 
+.beer-name {
+    font-family: "DungGeunMo";
+}
+
 .beer-image {
     width: max(60%, 480px);
     height: 480px;
