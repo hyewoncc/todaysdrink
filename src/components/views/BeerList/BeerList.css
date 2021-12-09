@@ -11,3 +11,9 @@
     justify-content: center;
     border: 1px solid orange;
 }
+
+.beerlist-option {
+     margin: auto;
+     display: flex;
+     justify-content: center;
+}
