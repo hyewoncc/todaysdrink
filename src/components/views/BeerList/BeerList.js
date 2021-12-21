@@ -13,13 +13,13 @@ function BeerList() {
     const [Option, setOption] = useState([[]]);
     const likeOption = [["많은 순으로", "desc"], ["적은 순으로", "asc"]];
     const alcoholOption = [["높은 순으로", "desc"], ["낮은 순으로", "asc"]];
-    const typeOption = [["라거", "lager"], ["스타우트", "stout"], ["IPA", "IPA"]];
+    const typeOption = [["라거", "LAGER"], ["스타우트", "STOUT"], ["IPA", "IPA"]];
     const countryOption = [["한국", "KOR"], ["중국", "CHN"], ["독일", "DEU"]];
 
     useEffect(() => {
         setOption(likeOption);
         setSearch("like");
-        setSelectedOption("asc");
+        setSelectedOption("desc");
     }, [])
 
     useEffect(() => {
@@ -44,9 +44,11 @@ function BeerList() {
         switch(option) {
             case "like":
                 setOption(likeOption);
+                setSelectedOption("desc");
                 break;
             case "alcohol":
                 setOption(alcoholOption);
+                setSelectedOption("desc");
                 break;
             case "type":
                 setOption(typeOption);
