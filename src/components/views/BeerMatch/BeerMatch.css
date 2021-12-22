@@ -1,0 +1,15 @@
+.beermatch-wrap {
+    width: 50vw;
+    min-width: 600px;
+    height: 400px;
+    margin: auto;
+    border: 1px solid slateblue;
+}
+
+.beerimage-wrap {
+    border: 1px solid red;
+}
+
+.match-sheet {
+    border: 1px solid skyblue;
+}
