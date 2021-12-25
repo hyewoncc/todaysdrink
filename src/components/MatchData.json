@@ -1,0 +1,84 @@
+[
+    {
+        "number": "1",
+        "title": "도수는 어느 정도?",
+        "question": "alcohol",
+        "answers": [{
+                "answer": "high",
+                "explain": "높을 수록 좋다"
+            },
+            {
+                "answer": "middle",
+                "explain": "적당하게"
+            },
+            {
+                "answer": "low",
+                "explain": "가볍게"
+            },
+            {
+                "answer": "none",
+                "explain": "논알콜"
+            }]
+    },
+    {
+        "number": "2",
+        "title": "어떤 유형을 선호?",
+        "question": "type",
+        "answers": [{
+            "lager": {
+                "answer": "lager",
+                "explain": "맑고 경쾌한 라거"
+            },
+            "ale": {
+                "answer": "ale",
+                "explain": "향이 좋은 에일"
+            },
+            "wheat": {
+                "answer": "whear",
+                "explain": "부드러운 밀맥주"
+            },
+            "cider": {
+                "answer": "cider",
+                "expalin": "상쾌한 과일주"
+            }
+        }]
+    },
+    {
+        "number": "3",
+        "title": "오늘의 안주는?",
+        "question": "food",
+        "answers": [{
+            "fried": {
+                "answer": "fried",
+                "explain": "바삭바삭 튀김"
+            },
+            "cheese": {
+                "answer": "cheese",
+                "explain": "고소한 치즈"
+            },
+            "snack": {
+                "answer": "snack",
+                "explain": "짭짤한 과자"
+            },
+            "none": {
+                "answer": "none",
+                "explain": "상관 없어"
+            }
+        }]
+    },
+    {
+        "number": "4",
+        "title": "콜라보 맥주도 포함할까?",
+        "question": "collabo",
+        "answers": [{
+            "yes": {
+                "answer": "yes",
+                "explain": "좋아"
+            },
+            "no": {
+                "answer": "no",
+                "explain": "싫어"
+            }
+        }]
+    }
+]
