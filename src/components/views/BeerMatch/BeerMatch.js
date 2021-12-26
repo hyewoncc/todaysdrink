@@ -5,11 +5,12 @@ import MatchRawData from "../../MatchData.json";
 function BeerMatch() {
     
     const [MatchData, setMatchData] = useState(MatchRawData);
+    const [Submitted, setSubmitted] = useState(0);
 
     return (
         <div className='beermatch-wrap'>
-            <div className='beerimage-wrap'>
-
+            <div className='matchimage-wrap'>
+                <p>{Submitted} / {MatchData.length}</p>
             </div>
             <div className='match-sheet'>
                 <div className='match-container'>
@@ -21,7 +22,7 @@ function BeerMatch() {
                             <div className='question-answers'>
                                 {data.answers && data.answers.map((answer, index) => (
                                     <div className='answer'>
-                                        <p>{answer.explain}</p>
+                                        <button className='answer-button'>{answer.explain}</button>
                                     </div>
                                 ))}
                             </div>

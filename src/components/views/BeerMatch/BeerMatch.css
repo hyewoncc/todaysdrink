@@ -3,13 +3,53 @@
     min-width: 600px;
     height: 400px;
     margin: auto;
+    display: flex;
     border: 1px solid slateblue;
 }
 
-.beerimage-wrap {
+.matchimage-wrap {
+    width: 40%;
+    margin-left: 0px;
+    min-width: 240px;
+    height: 100%;
     border: 1px solid red;
 }
 
 .match-sheet {
     border: 1px solid skyblue;
+    overflow: auto;
+}
+
+.match-container {
+    position: relative;
+    display: flex;
+}
+
+.question {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: 360px;
+}
+
+.question-title {
+    width: 100%;
+    text-align: center;
+}
+
+.question-answers {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.answer {
+    width: 240px;
+    height: 32px;
+    margin-bottom: 8px;
+}
+
+.answer-button {
+    width: 100%;
+    height: 100%;
 }
