@@ -6,8 +6,14 @@ function BeerMatch() {
     
     const [MatchData, setMatchData] = useState(MatchRawData);
     const [Submitted, setSubmitted] = useState(0);
+    const [AnswerData, setAnswerData] = useState([]);
 
-    const answerSelectHandler = () => {
+    const answerSelectHandler = (question, answer) => {
+        let data = {
+            "question": question,
+            "answer": answer
+        };
+        setAnswerData([...AnswerData, data]);
         setSubmitted(Submitted+1);
     }
 
@@ -27,7 +33,7 @@ function BeerMatch() {
                                 {data.answers && data.answers.map((answer, j) => (
                                     <div className='answer'>
                                         <button className='answer-button' disabled={i == Submitted ? "" : "disabled"} 
-                                                onClick={answerSelectHandler}>{answer.explain}</button>
+                                                onClick={() => {answerSelectHandler(data.question, answer.answer)}}>{answer.explain}</button>
                                     </div>
                                 ))}
                             </div>
