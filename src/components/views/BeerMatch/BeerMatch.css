@@ -8,9 +8,9 @@
 }
 
 .matchimage-wrap {
+    min-width: 200px;
     width: 40%;
     margin-left: 0px;
-    min-width: 240px;
     height: 100%;
     border: 1px solid red;
 }
@@ -18,18 +18,36 @@
 .match-sheet {
     border: 1px solid skyblue;
     overflow: auto;
+    max-width: 400px;
 }
 
 .match-container {
     position: relative;
     display: flex;
+    transition: all 1s;
 }
 
+.submit-0 {
+    right: 0px;
+}
+
+.submit-1 {
+    right: 400px;
+}
+
+.submit-2 {
+    right: 800px;
+}
+
+.submit-3 {
+    right: 1200px;
+}
+  
 .question {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    min-width: 360px;
+    min-width: 400px;
 }
 
 .question-title {
@@ -52,4 +70,10 @@
 .answer-button {
     width: 100%;
     height: 100%;
+}
+
+.answer-button:hover {
+    background-color: purple;
+    color: wheat;
+    cursor: pointer;
 }

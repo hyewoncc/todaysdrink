@@ -7,22 +7,27 @@ function BeerMatch() {
     const [MatchData, setMatchData] = useState(MatchRawData);
     const [Submitted, setSubmitted] = useState(0);
 
+    const answerSelectHandler = () => {
+        setSubmitted(Submitted+1);
+    }
+
     return (
         <div className='beermatch-wrap'>
             <div className='matchimage-wrap'>
                 <p>{Submitted} / {MatchData.length}</p>
             </div>
             <div className='match-sheet'>
-                <div className='match-container'>
-                    {MatchData && MatchData.map((data, index) => (
+                <div className={'match-container submit-' + Submitted}>
+                    {MatchData && MatchData.map((data, i) => (
                         <div className='question'>
                             <div className='question-title'>
                                 <p>{data.title}</p>
                             </div>
                             <div className='question-answers'>
-                                {data.answers && data.answers.map((answer, index) => (
+                                {data.answers && data.answers.map((answer, j) => (
                                     <div className='answer'>
-                                        <button className='answer-button'>{answer.explain}</button>
+                                        <button className='answer-button' disabled={i == Submitted ? "" : "disabled"} 
+                                                onClick={answerSelectHandler}>{answer.explain}</button>
                                     </div>
                                 ))}
                             </div>
