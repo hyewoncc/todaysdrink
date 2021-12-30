@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import { API_URL } from '../../Config';
 import './BeerMatch.css';
 import MatchRawData from "../../MatchData.json";
 
@@ -16,6 +17,22 @@ function BeerMatch() {
         setAnswerData([...AnswerData, data]);
         setSubmitted(Submitted+1);
     }
+
+    useEffect(() => {
+        if (AnswerData.length == MatchData.length) {
+            const endpoint = API_URL + 'match';
+            fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(AnswerData)
+            })
+                .then(response => {
+
+                })
+        }
+    }, [AnswerData])
 
     return (
         <div className='beermatch-wrap'>
