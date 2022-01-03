@@ -27,7 +27,7 @@ function BeerCard(props) {
         setMouseX(e.screenX);
     }
 
-    const rotateClockwise = () => {
+    const rotateAntiClockwise = () => {
         if(ImageIndex < Images) {
             setImageIndex(ImageIndex + 1);
         }else if(ImageIndex === Images) {
@@ -35,7 +35,7 @@ function BeerCard(props) {
         }
     }
 
-    const rotateAntiClockwise = () => {
+    const rotateClockwise = () => {
         if(ImageIndex > 1) {
             setImageIndex(ImageIndex - 1);
         }else if(ImageIndex === 1){
