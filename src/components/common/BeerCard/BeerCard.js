@@ -9,12 +9,12 @@ function BeerCard(props) {
     /**
      * TODO
      * 1. 이미지 파일 경로를 props에서 맥주 이름 받아서 지정하도록 교체 
-     * 2. imageindex 의 max 값을 props에서 총 이미지 수 받아서 하도록 교체 
      */
 
     const [MouseX, setMouseX] = useState(0);
     const [MouseY, setMouseY] = useState(0);
     const [ImageIndex, setImageIndex] = useState(1);
+    const [Images, setImages] = useState(props.images);
     const [RotationState, setRotationState] = useState(false);
     const [RotationDirection, setRotationDirection] = useState(0);
     const [EnterTime, setEnterTime] = useState(new Date());
@@ -28,9 +28,9 @@ function BeerCard(props) {
     }
 
     const rotateClockwise = () => {
-        if(ImageIndex < 25) {
+        if(ImageIndex < Images) {
             setImageIndex(ImageIndex + 1);
-        }else if(ImageIndex === 25) {
+        }else if(ImageIndex === Images) {
             setImageIndex(1);
         }
     }
@@ -39,7 +39,7 @@ function BeerCard(props) {
         if(ImageIndex > 1) {
             setImageIndex(ImageIndex - 1);
         }else if(ImageIndex === 1){
-            setImageIndex(24);
+            setImageIndex(Images);
         }
     }
 
@@ -98,7 +98,7 @@ function BeerCard(props) {
                     pathname: `/beers/${props.beerId}`,
                     state: { apiLink : props.apiLinks.self }}}>
                     <div className="beerimage-wrap" onMouseEnter={initMousePosition} onMouseMove={detectMouseDirection} onMouseLeave={runAutoRotation}>
-                        <img src={BEERCARD_IMG_URL + '/' + props.beerName + '/' + props.beerName + ImageIndex + '.png'}/>
+                        <img src={BEERCARD_IMG_URL + '/' + props.beerName + '/' + props.beerName + (ImageIndex < 10 ? '0' + ImageIndex : ImageIndex) + '.png'}/>
                     </div>
                 </Link>
                 <div className="beer-like">
