@@ -13,7 +13,7 @@ function BeerDetail(props) {
 
     useEffect(() => {
         //url값으로 생성하되, 백엔드에서 받은 link가 있다면 link로 처리 
-        let endpoint = `${API_URL}beers/${props.match.params.beerId}`;
+        let endpoint = `${API_URL}beers/${beerId}`;
 
         if(props.location.state) {
             endpoint = props.location.state.apiLink.href;
