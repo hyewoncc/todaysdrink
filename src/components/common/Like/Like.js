@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Like.css';
+import { ICON_IMG_URL } from '../../Config';
 
 function Like(props) {
 
@@ -63,7 +64,8 @@ function Like(props) {
     return (
         <div className="like-wrap">
             <button className={"btn like " + (LikeState ? "on" : "off")} 
-                    onClick={toggleLike}>하트</button>
+                    onClick={toggleLike}>
+                    <img src={ICON_IMG_URL + 'heart/' + (LikeState ? "up" : "down") + '.png'}/></button>
             <span>{Like.count}</span>
         </div>
     )

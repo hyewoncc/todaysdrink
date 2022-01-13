@@ -6,14 +6,12 @@
 
 .btn.like {
     width: 100%;
+    border: none;
+    background: transparent;
 }
 
-.btn.like.off {
-    background-color: lightgray;
-}
-
-.btn.like.on {
-    background-color: pink;
+.btn.like:hover {
+    cursor: pointer;
 }
 
 .like-tag {
