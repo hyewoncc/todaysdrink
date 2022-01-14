@@ -1,22 +1,22 @@
 .header {
-    border: 1px solid red;
     width: 100vw;
-    height: 230px;
 }
 
 .logo-container {
-    border: 1px solid orange;
     width: 100%;
-    height: 80%;
     display: flex;
     justify-content: center;
+    background: linear-gradient(45deg, rgb(33, 45, 99), rgb(114, 26, 102));
 }
 
 .title-logo {
-    width: 400px;
-    height: 90%;
-    margin: auto;
-    background-color: mistyrose;
+    width: 320px;
+}
+
+.logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .header-bar {
@@ -34,7 +34,7 @@
 
 .menus {
     width: 100%;
-    height: 100%;
+    height: 48px;
     display: flex;
     justify-content: space-between;
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { IMG_URL } from '../../Config';
 import { withRouter } from 'react-router-dom';
 import './Header.css';
 
@@ -20,7 +21,7 @@ function Header(props) {
         <div className="header">
             <div className="logo-container">
                 <div className="title-logo" onClick={goMain}>
-                
+                    <img className="logo-image" src={IMG_URL + 'logo_test3.png'}/>
                 </div>
             </div>
             <div className="header-bar">
