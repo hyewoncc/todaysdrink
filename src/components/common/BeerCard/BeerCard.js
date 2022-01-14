@@ -12,7 +12,6 @@ function BeerCard(props) {
      */
 
     const [MouseX, setMouseX] = useState(0);
-    const [MouseY, setMouseY] = useState(0);
     const [ImageIndex, setImageIndex] = useState(1);
     const [Images, setImages] = useState(props.images);
     const [RotationState, setRotationState] = useState(false);
@@ -105,6 +104,9 @@ function BeerCard(props) {
                     <Like
                         apiLinks = {props.apiLinks}
                     />
+                </div>
+                <div className="card-title">
+                    {props.beerName}
                 </div>
             </div>
         </div>

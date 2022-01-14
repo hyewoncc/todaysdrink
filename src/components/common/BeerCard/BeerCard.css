@@ -10,7 +10,8 @@
     width: 200px;
     height: 100%;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     border: 1px solid black;
 }
 
@@ -21,4 +22,11 @@
 
 .beer-like {
     position: relative;
+}
+
+.card-title {
+    width: 200px;
+    text-align: center;
+    font-family: "DungGeunMo";
+    font-size: 14pt;
 }

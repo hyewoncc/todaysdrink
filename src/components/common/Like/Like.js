@@ -63,10 +63,9 @@ function Like(props) {
 
     return (
         <div className="like-wrap">
-            <button className={"btn like " + (LikeState ? "on" : "off")} 
-                    onClick={toggleLike}>
-                    <img src={ICON_IMG_URL + 'heart/' + (LikeState ? "up" : "down") + '.png'}/></button>
-            <span>{Like.count}</span>
+            <button className={"btn like icon " + (LikeState ? "on" : "off")} 
+                    onClick={toggleLike}></button>
+            <span className="like-count">{Like.count}</span>
         </div>
     )
 }
