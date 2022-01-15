@@ -7,7 +7,6 @@ import './BeerList.css';
 function BeerList() {
 
     const [Beers, setBeers] = useState([]);
-    const [Page, setPage] = useState(0);
     const [Search, setSearch] = useState("");
     const [SelectedOption, setSelectedOption] = useState();
     const [Option, setOption] = useState([[]]);
@@ -77,7 +76,7 @@ function BeerList() {
     return (
         <div className="beerlist-wrap">
             <div className="beerlist-option">
-                <span>맥주 진열은</span>
+                <span>맥주 진열은 </span>
                 <select onChange={onSearchSelectHandler}>
                     <option key="like" value="like">좋아요</option>
                     <option key="alcohol" value="alcohol">도수</option>

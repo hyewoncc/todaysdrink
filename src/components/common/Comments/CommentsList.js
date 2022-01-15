@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { API_URL } from '../../Config';
 import Like from '../../common/Like/Like';
 import './CommentsList.css';
 
@@ -51,7 +50,7 @@ function CommentsList(props) {
             body: JSON.stringify(body)
         })
             .then(response => {
-                if(response.status == 204){
+                if(response.status === 204){
                     fetchComments(endpoint)
                 }
             })

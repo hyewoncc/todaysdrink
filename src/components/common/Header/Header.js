@@ -21,7 +21,7 @@ function Header(props) {
         <div className="header">
             <div className="logo-container">
                 <div className="title-logo" onClick={goMain}>
-                    <img className="logo-image" src={IMG_URL + 'logo_test3.png'}/>
+                    <img className="logo-image" src={IMG_URL + 'logo_test3.png'} alt='logo'/>
                 </div>
             </div>
             <div className="header-bar">

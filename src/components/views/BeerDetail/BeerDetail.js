@@ -40,7 +40,8 @@ function BeerDetail(props) {
             <div className="info-container">
                 <div className="low">
                     <div className="beer-image">
-                        <img src={BEERCARD_IMG_URL + Beer.name + '/' + Beer.name + '1.png'}/>
+                        <img src={BEERCARD_IMG_URL + Beer.name + '/' + Beer.name + '1.png'}
+                            alt={Beer.name}/>
                     </div>
                     <div className="beer-info">
                         <div className="low-text beer-name">

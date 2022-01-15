@@ -36,7 +36,7 @@ function Like(props) {
             }
         })
             .then(response => {
-                if(response.status == 200) {
+                if(response.status === 200) {
                     fetchLike(getEndpoint)
                 }
             })
@@ -50,7 +50,7 @@ function Like(props) {
             }
         })
             .then(response => {
-                if(response.status == 200) {
+                if(response.status === 200) {
                     fetchLike(getEndpoint)
                 }
             })
@@ -61,7 +61,7 @@ function Like(props) {
             sessionStorage.setItem(linkIndex, false);
             return false;
         } 
-        if (sessionStorage.getItem(linkIndex) == "true") {
+        if (sessionStorage.getItem(linkIndex) === "true") {
             return true;
         }
         return false;

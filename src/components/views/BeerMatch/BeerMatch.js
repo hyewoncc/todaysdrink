@@ -5,7 +5,7 @@ import MatchRawData from "../../MatchData.json";
 
 function BeerMatch() {
     
-    const [MatchData, setMatchData] = useState(MatchRawData);
+    const [MatchData, setMatchData] = useState([]);
     const [Submitted, setSubmitted] = useState(0);
     const [AnswerData, setAnswerData] = useState([]);
 
@@ -19,7 +19,11 @@ function BeerMatch() {
     }
 
     useEffect(() => {
-        if (AnswerData.length == MatchData.length) {
+        setMatchData(MatchRawData);
+    }, [])
+
+    useEffect(() => {
+        if (AnswerData.length === MatchData.length) {
             const endpoint = API_URL + 'match';
             fetch(endpoint, {
                 method: 'POST',
@@ -49,7 +53,7 @@ function BeerMatch() {
                             <div className='question-answers'>
                                 {data.answers && data.answers.map((answer, j) => (
                                     <div className='answer'>
-                                        <button className='answer-button' disabled={i == Submitted ? "" : "disabled"} 
+                                        <button className='answer-button' disabled={i === Submitted ? "" : "disabled"} 
                                                 onClick={() => {answerSelectHandler(data.question, answer.answer)}}>{answer.explain}</button>
                                     </div>
                                 ))}

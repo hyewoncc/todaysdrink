@@ -10,10 +10,22 @@
     flex-wrap: wrap;
     justify-content: center;
     border: 1px solid orange;
+    background-color: rgb(100, 103, 146);
 }
 
 .beerlist-option {
      margin: auto;
+     margin-top: 8px;
+     margin-bottom: 16px;
      display: flex;
      justify-content: center;
+     align-items: baseline;
+     font-family: "DungGeunMo";
+     font-size: 18px;
+}
+
+select {
+    font-family: "DungGeunMo";
+    margin-left: 8px;
+    height: 24px;
 }

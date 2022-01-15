@@ -13,7 +13,7 @@ function BeerCard(props) {
 
     const [MouseX, setMouseX] = useState(0);
     const [ImageIndex, setImageIndex] = useState(1);
-    const [Images, setImages] = useState(props.images);
+    const [Images, setImages] = useState(0);
     const [RotationState, setRotationState] = useState(false);
     const [RotationDirection, setRotationDirection] = useState(0);
     const [EnterTime, setEnterTime] = useState(new Date());
@@ -61,6 +61,10 @@ function BeerCard(props) {
         setTimeGap(EnterTime.getTime() - LeaveTime.getTime());
         setRotationState(true);
     }
+
+    useEffect(() => {
+        setImages(props.images);
+    }, [])
     
     useEffect(() => {
         function autoRotation() {
@@ -97,7 +101,8 @@ function BeerCard(props) {
                     pathname: `/beers/${props.beerName}`,
                     state: { apiLink : props.apiLinks.self }}}>
                     <div className="beerimage-wrap" onMouseEnter={initMousePosition} onMouseMove={detectMouseDirection} onMouseLeave={runAutoRotation}>
-                        <img src={BEERCARD_IMG_URL + '/' + props.beerName + '/' + props.beerName + (ImageIndex < 10 ? '0' + ImageIndex : ImageIndex) + '.png'}/>
+                        <img src={BEERCARD_IMG_URL + '/' + props.beerName + '/' + props.beerName + (ImageIndex < 10 ? '0' + ImageIndex : ImageIndex) + '.png'}
+                            alt={props.beerName}/>
                     </div>
                 </Link>
                 <div className="beer-like">
