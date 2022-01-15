@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './Like.css';
-import { ICON_IMG_URL } from '../../Config';
 
 function Like(props) {
 
     const [LikeState, setLikeState] = useState(false);
     const [Like, setLike] = useState([]);
-    const [Links, setLinks] = useState([]);
 
     const toggleLike = () => {
         const getLink = props.apiLinks.like.href;
@@ -14,8 +12,10 @@ function Like(props) {
         const dislikeLink = props.apiLinks.dislike.href;
         if(!LikeState) {
             fetchUpLike(getLink, upLink);
+            sessionStorage.setItem(getLink, true);
         } else if(LikeState) {
             fetchDisLike(getLink, dislikeLink);
+            sessionStorage.setItem(getLink, false);
         }
         setLikeState(!LikeState);
     }
@@ -56,8 +56,20 @@ function Like(props) {
             })
     }
 
+    const checkLiked = (linkIndex) => {
+        if (sessionStorage.getItem(linkIndex) === null) {
+            sessionStorage.setItem(linkIndex, false);
+            return false;
+        } 
+        if (sessionStorage.getItem(linkIndex) == "true") {
+            return true;
+        }
+        return false;
+    }
+
      useEffect(() => {
          const getLink = props.apiLinks.like.href;
+         setLikeState(checkLiked(getLink));
          fetchLike(getLink);
      }, [])
 
