@@ -1,6 +1,5 @@
 .beermatch-wrap {
-    width: 50vw;
-    min-width: 600px;
+    width: 640px;
     height: 400px;
     margin: auto;
     display: flex;
@@ -8,8 +7,7 @@
 }
 
 .matchimage-wrap {
-    min-width: 200px;
-    width: 40%;
+    width: 240px;
     margin-left: 0px;
     height: 100%;
     border: 1px solid red;
@@ -18,7 +16,7 @@
 .match-sheet {
     border: 1px solid skyblue;
     overflow: auto;
-    max-width: 400px;
+    width: 400px;
 }
 
 .match-container {
