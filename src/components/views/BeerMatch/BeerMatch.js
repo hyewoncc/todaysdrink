@@ -23,7 +23,7 @@ function BeerMatch() {
     }, [])
 
     useEffect(() => {
-        if (AnswerData.length === MatchData.length) {
+        if (AnswerData.length === MatchData.length && AnswerData.length !== 0) {
             const endpoint = API_URL + 'match';
             fetch(endpoint, {
                 method: 'POST',
@@ -41,14 +41,14 @@ function BeerMatch() {
     return (
         <div className='beermatch-wrap'>
             <div className='matchimage-wrap'>
-                <p>{Submitted} / {MatchData.length}</p>
+                {Submitted} / {MatchData.length}
             </div>
             <div className='match-sheet'>
                 <div className={'match-container submit-' + Submitted}>
                     {MatchData && MatchData.map((data, i) => (
                         <div className='question'>
                             <div className='question-title'>
-                                <p>{data.title}</p>
+                                {data.title}
                             </div>
                             <div className='question-answers'>
                                 {data.answers && data.answers.map((answer, j) => (
