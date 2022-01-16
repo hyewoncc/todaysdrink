@@ -25,10 +25,10 @@
 .btn.like.icon.on{
     background: url(../../../images/icon/heart/up.png) no-repeat;
     animation-duration: 0.25s;
-    animation-name: slidein;
+    animation-name: click-jumping;
 }
 
-@keyframes slidein {
+@keyframes click-jumping {
     from {
         margin-top: 0px;
     }

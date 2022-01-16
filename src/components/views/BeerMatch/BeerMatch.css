@@ -1,22 +1,30 @@
+* {
+    font-family: "DungGeunMo";
+}
+
 .beermatch-wrap {
     width: 640px;
     height: 400px;
     margin: auto;
+    margin-top: 16px;
+    padding-top: 24px;
     display: flex;
-    border: 1px solid slateblue;
+    border-radius: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .matchimage-wrap {
     width: 240px;
     margin-left: 0px;
     height: 100%;
-    border: 1px solid red;
 }
 
 .match-sheet {
-    border: 1px solid skyblue;
+    color: white;
     overflow: auto;
     width: 400px;
+    display: flex;
+    align-items: center;
 }
 
 .match-container {
@@ -46,11 +54,14 @@
     flex-wrap: wrap;
     justify-content: center;
     min-width: 400px;
+    margin-bottom: 40px;
 }
 
 .question-title {
     width: 100%;
     text-align: center;
+    margin: 0px 0px 24px 0px;
+    font-size: 21px;
 }
 
 .question-answers {
@@ -68,10 +79,18 @@
 .answer-button {
     width: 100%;
     height: 100%;
+    font-size: 15px;
+    background: 
+        linear-gradient(rgb(45, 35, 58),rgb(45, 35, 58)) padding-box, /*this is your grey background*/
+        linear-gradient(to right, #e0ce26, #3bf0c8) border-box;
+    color: #ffffff;
+    border: 1px solid transparent;
+    border-radius:1rem;
 }
 
 .answer-button:hover {
-    background-color: purple;
-    color: wheat;
+    background: 
+        linear-gradient(to right, #e0ce26, #3bf0c8) border-box;
+    color: black;
     cursor: pointer;
 }

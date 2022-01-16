@@ -6,7 +6,6 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    background: linear-gradient(45deg, rgb(67, 126, 182), rgb(114, 26, 74));
 }
 
 .title-logo {
