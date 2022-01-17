@@ -6,10 +6,12 @@
 .beerlist-container {
     width: 80vw;
     margin: auto;
+    padding-top: 24px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    border: 1px solid orange;
+    border-radius: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .beerlist-option {

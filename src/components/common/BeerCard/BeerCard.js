@@ -5,12 +5,6 @@ import Like from '../../common/Like/Like';
 import './BeerCard.css';
 
 function BeerCard(props) {
-
-    /**
-     * TODO
-     * 1. 이미지 파일 경로를 props에서 맥주 이름 받아서 지정하도록 교체 
-     */
-
     const [MouseX, setMouseX] = useState(0);
     const [ImageIndex, setImageIndex] = useState(1);
     const [Images, setImages] = useState(0);
@@ -111,7 +105,7 @@ function BeerCard(props) {
                     />
                 </div>
                 <div className="card-title">
-                    {props.beerName}
+                    {props.beerNickname}
                 </div>
             </div>
         </div>

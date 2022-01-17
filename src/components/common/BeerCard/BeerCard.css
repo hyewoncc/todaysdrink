@@ -1,8 +1,7 @@
 .beercard-wrap {
     width: 200px;
     height: 200px;
-    margin-bottom: 10px;
-    padding: 15px;
+    margin: 16px 0px 16px 0px;
 }
 
 .beercard {
@@ -11,12 +10,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    border: 1px solid black;
 }
 
 .beerimage-wrap {
     margin-left: 50px;
-    border: 1px solid red;
 }
 
 .beer-like {
@@ -27,5 +24,6 @@
     width: 200px;
     text-align: center;
     font-family: "DungGeunMo";
-    font-size: 14pt;
+    font-size: 12pt;
+    color: white;
 }

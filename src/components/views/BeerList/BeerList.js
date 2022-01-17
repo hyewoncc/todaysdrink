@@ -96,6 +96,7 @@ function BeerList() {
                             apiLinks = {beer._links} 
                             beerId = {beer.id}
                             beerName = {beer.name}
+                            beerNickname = {beer.nickname}
                             images = {beer.images}
                         />
                     </React.Fragment>
