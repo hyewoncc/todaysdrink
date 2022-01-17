@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { API_URL } from '../../Config';
+import { API_URL, ICON_IMG_URL } from '../../Config';
 import './BeerMatch.css';
 import MatchRawData from "../../MatchData.json";
 
@@ -41,7 +41,12 @@ function BeerMatch() {
     return (
         <div className='beermatch-wrap'>
             <div className='matchimage-wrap'>
-                {Submitted} / {MatchData.length}
+                <div className='matchimage'>
+                    <img src={ICON_IMG_URL + 'glass.png'} className='matchimage-glass'></img>
+                    <div className='matchimage-beer-wrap'>
+                        <img src={ICON_IMG_URL + 'beer.png'} className={'matchimage-beer step' + Submitted}></img>
+                    </div>
+                </div>
             </div>
             <div className='match-sheet'>
                 <div className={'match-container submit-' + Submitted}>

@@ -17,6 +17,53 @@
     width: 240px;
     margin-left: 0px;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.matchimage {
+    padding: 0px 40px 160px 0px;
+}
+
+.matchimage-glass {
+    position: absolute;
+    z-index: 100;
+}
+
+.matchimage-beer-wrap {
+    position: absolute;
+    width: 104px;
+}
+
+.matchimage-beer {
+    width: 104px;
+    object-fit: cover;
+    transition: all 1s;
+}
+
+.matchimage-beer.step0 {  
+    height: 0px;
+    object-position: 0 -144px;
+    padding-top: 144px;
+}
+
+.matchimage-beer.step1 {
+    height: 30px;
+    object-position: 0 -114px;
+    padding-top: 114px;
+}
+
+.matchimage-beer.step2 {
+    height: 60px;
+    object-position: 0 -84px;
+    padding-top: 84px;
+}
+
+.matchimage-beer.step3 {
+    height: 90px;
+    object-position: 0 -54px;
+    padding-top: 54px;
 }
 
 .match-sheet {
