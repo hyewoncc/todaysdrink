@@ -47,13 +47,15 @@ function BeerList() {
                 break;
             case "alcohol":
                 setOption(alcoholOption);
-                setSelectedOption("desc");
+                setSelectedOption("asc");
                 break;
             case "type":
                 setOption(typeOption);
+                setSelectedOption("LAGER");
                 break;
             case "country":
                 setOption(countryOption);
+                setSelectedOption("KOR");
                 break;
             default:
                 break;
@@ -63,7 +65,6 @@ function BeerList() {
     const onSearchFetchHandler = () => {
         const filter = {};
         filter[Search] = SelectedOption;
-        console.log(filter);
         const endpoint = `${API_URL}beers?filters=${encodeURIComponent(JSON.stringify(filter))}`
         fetchBeers(endpoint);
     }
@@ -83,9 +84,9 @@ function BeerList() {
                     <option key="type" value="type">종류</option>
                     <option key="country" value="country">국가</option>
                 </select>
-                <select onChange={onOptionSelectHandler}>
+                <select onChange={onOptionSelectHandler} value={SelectedOption}>
                     {Option.map((op, index) => (
-                        <option value={op[1]}>{op[0]}</option>
+                        <option key={index} value={op[1]}>{op[0]}</option>
                     ))}
                 </select>
             </div>
