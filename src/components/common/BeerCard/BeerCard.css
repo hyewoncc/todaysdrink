@@ -20,10 +20,17 @@
     position: relative;
 }
 
-.card-title {
-    width: 200px;
-    text-align: center;
+.card-title-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
     font-family: "DungGeunMo";
     font-size: 12pt;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 8px 0px 8px 0px;
+}
+
+.card-title {
     color: white;
+    height: 100%;
 }

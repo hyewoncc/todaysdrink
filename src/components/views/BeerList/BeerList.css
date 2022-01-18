@@ -6,7 +6,7 @@
 .beerlist-container {
     width: 80vw;
     margin: auto;
-    padding-top: 24px;
+    padding: 24px 0px 24px 0px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

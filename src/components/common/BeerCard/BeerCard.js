@@ -104,8 +104,8 @@ function BeerCard(props) {
                         apiLinks = {props.apiLinks}
                     />
                 </div>
-                <div className="card-title">
-                    {props.beerNickname}
+                <div className="card-title-wrap">
+                    <span className='card-title'>{props.beerNickname}</span>
                 </div>
             </div>
         </div>

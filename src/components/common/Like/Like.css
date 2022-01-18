@@ -45,3 +45,11 @@
 .btn.like.icon.off:hover {
     background: url(../../../images/icon/heart/hover.png) no-repeat !important;
 }
+
+.like-count.off {
+    color: rgb(173, 173, 173);
+}
+
+.like-count.on {
+    color: rgb(255, 255, 255);
+}

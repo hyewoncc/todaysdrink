@@ -77,7 +77,7 @@ function Like(props) {
         <div className="like-wrap">
             <button className={"btn like icon " + (LikeState ? "on" : "off")} 
                     onClick={toggleLike}></button>
-            <span className="like-count">{Like.count}</span>
+            <span className={"like-count " + (LikeState ? "on" : "off")}>{Like.count}</span>
         </div>
     )
 }
