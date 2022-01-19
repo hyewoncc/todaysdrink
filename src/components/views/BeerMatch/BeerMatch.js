@@ -42,9 +42,9 @@ function BeerMatch() {
         <div className='beermatch-wrap'>
             <div className='matchimage-wrap'>
                 <div className='matchimage'>
-                    <img src={ICON_IMG_URL + 'glass.png'} className='matchimage-glass'></img>
+                    <img src={ICON_IMG_URL + 'glass.png'} alt='empty glass' className='matchimage-glass'></img>
                     <div className='matchimage-beer-wrap'>
-                        <img src={ICON_IMG_URL + 'beer.png'} className={'matchimage-beer step' + Submitted}></img>
+                        <img src={ICON_IMG_URL + 'beer.png'} alt='beer in glass' className={'matchimage-beer step' + Submitted}></img>
                     </div>
                 </div>
             </div>

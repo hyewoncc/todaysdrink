@@ -40,21 +40,25 @@ function BeerDetail(props) {
             <div className="info-container">
                 <div className="low">
                     <div className="beer-image">
-                        <img src={BEERCARD_IMG_URL + Beer.name + '/' + Beer.name + '1.png'}
+                        <img src={BEERCARD_IMG_URL + Beer.name + '/' + Beer.name + '01.png'}
                             alt={Beer.name}/>
                     </div>
-                    <div className="beer-info">
-                        <div className="low-text beer-name">
-                            {Beer.name}
-                        </div>
-                        <div className="low-text beer-type">
-                            {Beer.beerType}
-                        </div>
-                        <div className="low-text beer-country">
-                            {Beer.country}
-                        </div>
-                        <div className="low-text beer-description">
-                            {Beer.description}
+                    <div className="beer-info-wrap">
+                        <div className='beer-info'>
+                            <h2 className="low-text beer-name">
+                                {Beer.nickname}
+                            </h2>
+                            <p className="low-text beer-type">
+                                {Beer.beerType} | {Beer.alcohol}%
+                            </p>
+                            <div className="low-text beer-country">
+                                {Beer.country}
+                            </div>
+                            <p className="low-text beer-description">
+                                {Beer.description && Beer.description.split('\\n').map(line => (
+                                    <span>{line}<br/></span>
+                                ))}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -79,6 +83,7 @@ function BeerDetail(props) {
                                     apiLinks = {beer._links}
                                     beerId = {beer.id}
                                     beerName = {beer.name}
+                                    beerNickname = {beer.nickname}
                                     images = {beer.images}
                                 />
                             </React.Fragment>
