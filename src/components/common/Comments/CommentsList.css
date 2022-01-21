@@ -3,18 +3,62 @@
 }
 
 .new {
-    height: 24px;
+    margin: 24px 0px 32px 0px;
+    padding: 0px 0px 0px 0px !important;
 }
 
-.comment-input {
+.new:hover {
+    background: transparent !important;
 }
 
 .comment.low {
+    height: 48px;
     display: flex;
     justify-content: space-between;
+    padding: 0px 16px 0px 8px;
+}
+
+.comment.low:hover {
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .comments.low.wrap {
     height: 304px;
     overflow: auto;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.nickname-input {
+    width: 15%;
+}
+
+.comment-input {
+    width: 70%;
+}
+
+.comment input[type="text"] { 
+    background: transparent;
+    color: white;
+    font-size: 18px;
+    padding: .5em .4em;
+    font-family: inherit;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.363); 
+    border-radius: 0;
+    outline-style: none;
+    -webkit-appearance: none;
+    -moz-appearance: none; 
+    appearance: none; 
+    box-shadow: none;
+    text-decoration-color: white;
+    outline: none !important;
+    transition: 0.2s;
+}
+
+.comment input[type="text"]:focus-visible {
+    border-bottom: 2px solid white;
+    transition: 0.2s;
 }

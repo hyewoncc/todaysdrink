@@ -62,8 +62,8 @@ function BeerDetail(props) {
                         </div>
                     </div>
                 </div>
-                <div className="low">
-                    <div className="comment-container">
+                <div className="low comment-container">
+                    <div className="comment-wrap">
                         {Beer.id && 
                             <CommentsList 
                                 beerId = {Beer.id} 

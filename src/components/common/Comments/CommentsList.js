@@ -76,14 +76,9 @@ function CommentsList(props) {
                 }
             </div>
             <div className="new comment low wrap">
-                <div>
-
-                </div>
-                <input type="text" className="nickname-input" onChange={onNameHandler}></input>
-                <div>
-                    
-                </div>
-                <input type="text" className="comment-input" onChange={onContentHandler}></input>
+                <input type="text" className="nickname-input inputbox" onChange={onNameHandler}
+                    autoCorrect='false'></input>
+                <input type="text" className="comment-input inputbox" onChange={onContentHandler}></input>
                 <button onClick={onCommentSubmitHandler}>등록</button>
             </div>
         </div>
