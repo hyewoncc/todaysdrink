@@ -31,7 +31,9 @@ function BeerDetail(props) {
         fetch(endpoint)
             .then(response => response.json())
             .then(response => {
-                setTypeRecommendBeers(response._embedded.beerDtoes);
+                if(Object.keys(response).length !== 0) {
+                    setTypeRecommendBeers(response._embedded.beerDtoes);
+                }
             })
     }
 
@@ -72,23 +74,27 @@ function BeerDetail(props) {
                         }
                     </div>
                 </div>
-                <div className="low wrap">
-                    <div className="recommend-title low">
-                        <p>같은 타입 맥주 추천</p>
-                    </div>
-                    <div className="recommend-container">
-                        {TypeRecommendBeers && TypeRecommendBeers.map((beer, index) => (
-                            <React.Fragment key = {index}>
-                                <BeerCard
-                                    apiLinks = {beer._links}
-                                    beerId = {beer.id}
-                                    beerName = {beer.name}
-                                    beerNickname = {beer.nickname}
-                                    images = {beer.images}
-                                />
-                            </React.Fragment>
-                        ))}
-                    </div>
+                <div className="low wrap recommend-container">
+                    {TypeRecommendBeers.length !== 0 && 
+                        <div className='type-recommend-container'>
+                            <div className="recommend-title low">
+                                <p>같은 타입 맥주 추천</p>
+                            </div>
+                            <div className="type-recommend recommend-wrap">
+                                {TypeRecommendBeers.map((beer, index) => (
+                                    <React.Fragment key = {index}>
+                                        <BeerCard
+                                            apiLinks = {beer._links}
+                                            beerId = {beer.id}
+                                            beerName = {beer.name}
+                                            beerNickname = {beer.nickname}
+                                            images = {beer.images}
+                                        />
+                                    </React.Fragment>
+                                ))}
+                            </div>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
