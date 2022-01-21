@@ -78,7 +78,6 @@
     justify-content: center;
     flex-wrap: wrap;
     background-color: rgba(0, 0, 0, 0.5);
-    box-shadow: -4px -4px -4px black;
 }
 
 .comment-wrap {
@@ -86,7 +85,25 @@
 }
 
 .recommend-container {
+    width: 100%;
+    margin-top: 32px;
     display: flex;
     white-space: nowrap;
     overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0.5rem;
 }
+
+.recommend-wrap {
+    width: min(100%, 840px);
+    padding: 0px 32px 0px 32px;
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.recommend-title {
+    margin-left: 24px;
+}
+

@@ -75,11 +75,12 @@ function CommentsList(props) {
                     </div>
                 }
             </div>
+            <h4 className='no-margin-title'>내 의견 남기기</h4>
             <div className="new comment low wrap">
                 <input type="text" className="nickname-input inputbox" onChange={onNameHandler}
                     autoCorrect='false'></input>
                 <input type="text" className="comment-input inputbox" onChange={onContentHandler}></input>
-                <button onClick={onCommentSubmitHandler}>등록</button>
+                <button onClick={onCommentSubmitHandler} className='comment-submit-btn'>등록</button>
             </div>
         </div>
     )

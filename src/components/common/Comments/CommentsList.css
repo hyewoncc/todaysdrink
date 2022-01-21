@@ -1,9 +1,14 @@
+.no-margin-title {
+    margin-block-end: 0rem;
+}
+
 .low {
     width: 100%;
+    align-content: flex-start;
 }
 
 .new {
-    margin: 24px 0px 32px 0px;
+    margin: 8px 0px 24px 0px;
     padding: 0px 0px 0px 0px !important;
 }
 
@@ -61,4 +66,21 @@
 .comment input[type="text"]:focus-visible {
     border-bottom: 2px solid white;
     transition: 0.2s;
+}
+
+.comment-submit-btn {
+    width: 64px;
+    background: 
+        linear-gradient(rgb(45, 35, 58),rgb(45, 35, 58)) padding-box,
+        linear-gradient(to right, #e0ce26, #3bf0c8) border-box;
+    color: #ffffff;
+    border: 1px solid transparent;
+    border-radius:0.5rem;
+}
+
+.comment-submit-btn:hover {
+    background: 
+        linear-gradient(to right, #e0ce26, #3bf0c8) border-box;
+    color: black;
+    cursor: pointer;
 }
