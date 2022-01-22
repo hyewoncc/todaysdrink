@@ -17,8 +17,12 @@
             "explain": "가볍게"
         },
         {
-            "answer": "none",
+            "answer": "zero",
             "explain": "논알콜"
+        },
+        {
+            "answer": "none",
+            "explain": "상관 없다"
         }]
     },
     {

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { API_URL, ICON_IMG_URL } from '../../Config';
 import './BeerMatch.css';
-import MatchRawData from "../../MatchData.json";
+import MatchRawData from "../../../datas/MatchData.json";
 
 function BeerMatch() {
     
