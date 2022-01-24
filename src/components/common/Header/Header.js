@@ -13,6 +13,10 @@ function Header(props) {
         props.history.push('/beers');
     }
 
+    const goBeerTypes = () => {
+        props.history.push('/types');
+    }
+
     const goMatch = () => {
         props.history.push('/match');
     }
@@ -28,7 +32,7 @@ function Header(props) {
                 <div className="menu-container">
                     <div className="menus">
                         <div className="menu" onClick={goBeerList}></div>
-                        <div className="menu"></div>
+                        <div className="menu" onClick={goBeerTypes}></div>
                         <div className="menu" onClick={goMatch}></div>
                     </div>
                 </div>

@@ -1,0 +1,19 @@
+ul {
+    list-style: none;
+    padding-left: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    border: 1px solid white;
+    width: 80px;
+    text-align: center;
+}
+
+li:hover {
+    background-color: white;
+}
+
+.types-list-wrap {
+}
