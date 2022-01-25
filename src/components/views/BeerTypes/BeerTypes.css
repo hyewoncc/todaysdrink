@@ -13,7 +13,10 @@ li {
 
 li:hover {
     background-color: white;
+    cursor: pointer;
 }
 
-.types-list-wrap {
+.types-explain-wrap {
+    display: flex;
+    justify-content: center;
 }
