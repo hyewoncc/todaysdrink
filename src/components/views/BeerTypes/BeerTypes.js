@@ -5,18 +5,31 @@ import './BeerTypes.css';
 function BeerTypes() {
 
     const [TypesData, setTypesData] = useState([]);
+    const [TypeObject, setTypeObject] = useState([]);
+    const [Type, setType] = useState("라거");
     const [TypeData, setTypeData] = useState();
 
     useEffect(() => {
         setTypesData(TypesRawData);
+        return () => {
+            setTypeObject(TypesData[0]);
+            setType(TypeObject.type);
+            setTypeData(TypeObject.explain);
+        }
     }, [])
+
+    useEffect(() => {
+        setType(TypeObject.type);
+        setTypeData(TypeObject.explain);
+    }, [TypeObject])
 
     return (
         <div className='types-container'>
             <div className='types-list-wrap'>
                 <ul>
                     {TypesData.map((data, i) => (
-                        <li onClick={() => setTypeData(data.explain)}>{data.type}</li>
+                        <li onClick={() => setTypeObject(data)}
+                            className={data.type === Type ? 'type-selected' : ''}>{data.type}</li>
                     ))}
                 </ul>
             </div>    
