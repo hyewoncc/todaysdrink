@@ -2,11 +2,23 @@
     font-family: "DungGeunMo";
 }
 
+.beermatch-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.match-title {
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-weight: normal !important;
+}
+
 .beermatch-wrap {
     width: 640px;
     height: 400px;
     margin: auto;
-    margin-top: 16px;
     padding-top: 24px;
     display: flex;
     border-radius: 0.5rem;
@@ -23,7 +35,19 @@
 }
 
 .matchimage {
-    padding: 0px 40px 160px 0px;
+    padding: 0px 32px 142px 0px;
+    animation-duration: 0.3s;
+    animation-timing-function: cubic-bezier(0.785, 0.105, 0.840, 0.730);
+    animation-name: drop-down;
+}
+
+@keyframes drop-down {
+    from {
+        padding: 0px 32px 360px 0px;
+    }
+    to {
+        padding: 0px 32px 142px 0px;  
+    }
 }
 
 .matchimage-glass {

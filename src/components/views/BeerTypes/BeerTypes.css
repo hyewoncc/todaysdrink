@@ -4,8 +4,16 @@
     flex-wrap: wrap;
 }
 
+.types-title {
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-weight: normal !important;
+}
+
 .types-list-wrap {
     width: 100%;
+    margin-top: 8px 0px 8px 0px;
 }
 
 ul {
@@ -17,7 +25,7 @@ ul {
 
 li {
     padding: 4px 8px 4px 8px;
-    margin: 0px 4px 0px 4px;
+    margin: 0px 8px 0px 8px;
     text-align: center;
     color: white;
     border-bottom: 1px solid rgb(202, 219, 48);
@@ -40,12 +48,32 @@ li.type-selected {
     border-bottom: none;
 }
 
-.types-explain-wrap {
-    width: 480px;
-    height: 320px;
+.types-wrap {
+    width: 720px;
+    height: 420px;
     border-radius: 0.5rem;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     background-color: rgba(3, 2, 2, 0.5);
     color: white;
+}
+
+.types-explain-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+}
+
+.types-image-wrap {
+    width: 280px;
+    height: 80%;
+    border: 1px solid red;
+    margin-right: 32px;
+}
+
+.types-explain-wrap p {
+    width: 320px;
 }

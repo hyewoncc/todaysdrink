@@ -39,34 +39,36 @@ function BeerMatch() {
     }, [AnswerData])
 
     return (
-        <div className='beermatch-wrap'>
-            <div className='matchimage-wrap'>
-                <div className='matchimage'>
-                    <img src={ICON_IMG_URL + 'glass.png'} alt='empty glass' className='matchimage-glass'></img>
-                    <div className='matchimage-beer-wrap'>
-                        <img src={ICON_IMG_URL + 'beer.png'} alt='beer in glass' className={'matchimage-beer step' + Submitted}></img>
+        <div className='beermatch-container'>
+            <h3 className='match-title'>내 취향 맥주 찾기</h3>
+            <div className='beermatch-wrap'>
+                <div className='matchimage-wrap'>
+                    <div className='matchimage'>
+                        <img src={ICON_IMG_URL + 'glass.png'} alt='empty glass' className='matchimage-glass'></img>
+                        <div className='matchimage-beer-wrap'>
+                            <img src={ICON_IMG_URL + 'beer.png'} alt='beer in glass' className={'matchimage-beer step' + Submitted}></img>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className='match-sheet'>
-                <div className={'match-container submit-' + Submitted}>
-                    {MatchData && MatchData.map((data, i) => (
-                        <div className='question'>
-                            <div className='question-title'>
-                                {data.title}
+                <div className='match-sheet'>
+                    <div className={'match-container submit-' + Submitted}>
+                        {MatchData && MatchData.map((data, i) => (
+                            <div className='question'>
+                                <div className='question-title'>
+                                    {data.title}
+                                </div>
+                                <div className='question-answers'>
+                                    {data.answers && data.answers.map((answer, j) => (
+                                        <div className='answer'>
+                                            <button className='answer-button' disabled={i === Submitted ? "" : "disabled"} 
+                                                    onClick={() => {answerSelectHandler(data.question, answer.answer)}}>{answer.explain}</button>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                            <div className='question-answers'>
-                                {data.answers && data.answers.map((answer, j) => (
-                                    <div className='answer'>
-                                        <button className='answer-button' disabled={i === Submitted ? "" : "disabled"} 
-                                                onClick={() => {answerSelectHandler(data.question, answer.answer)}}>{answer.explain}</button>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
-
             </div>
         </div>
     )

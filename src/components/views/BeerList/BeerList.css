@@ -14,10 +14,14 @@
     background-color: rgba(0, 0, 0, 0.3);
 }
 
+.beerlist-title {
+    color: white;
+}
+
 .beerlist-option {
      margin: auto;
      margin-top: 8px;
-     margin-bottom: 16px;
+     margin-bottom: 14px;
      display: flex;
      justify-content: center;
      align-items: baseline;
