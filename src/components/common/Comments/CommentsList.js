@@ -7,6 +7,7 @@ function CommentsList(props) {
     const [Content, setContent] = useState("");
     const [Comments, setComments] = useState([]);
     const [BeerId, setBeerId] = useState(0);
+    const [ErrorMessage, setErrorMessage] = useState("");
 
     useEffect(() => {
         setBeerId(props.beerId);
@@ -32,8 +33,33 @@ function CommentsList(props) {
         setContent(e.currentTarget.value);
     }
 
+    const validateNewComment = () => {
+        setName(Name.trim());
+        if(Name === "") {
+            setErrorMessage("이름이 비었습니다");
+            return false;
+        }
+
+        if(Name.length > 10) {
+            setErrorMessage("이름은 최대 10자까지 입력할 수 있습니다");
+            return false;
+        }
+
+        setContent(Content.trim());
+        if(Content === "") {
+            setErrorMessage("내용이 비었습니다");
+            return false;
+        }
+
+        return true;
+    }
+
     const onCommentSubmitHandler = (e) => {
         e.preventDefault();
+
+        if(!validateNewComment()) {
+            return false;
+        }
 
         let body = {
             beerId: BeerId,
@@ -81,6 +107,9 @@ function CommentsList(props) {
                     autoCorrect='false'></input>
                 <input type="text" className="comment-input inputbox" onChange={onContentHandler}></input>
                 <button onClick={onCommentSubmitHandler} className='comment-submit-btn'>등록</button>
+                <div className='error-message low'>
+                    <span>{ErrorMessage}</span>
+                </div>
             </div>
         </div>
     )

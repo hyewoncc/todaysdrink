@@ -80,7 +80,12 @@
 
 .comment-submit-btn:hover {
     background: 
-        linear-gradient(to right, #e0ce26, #3bf0c8) border-box;
+        linear-gradient(to right, rgb(224, 206, 38), #3bf0c8) border-box;
     color: black;
     cursor: pointer;
+}
+
+.error-message {
+    margin-top: 8px;
+    color: rgb(255, 242, 121);
 }
