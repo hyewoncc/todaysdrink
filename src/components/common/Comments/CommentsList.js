@@ -61,6 +61,8 @@ function CommentsList(props) {
             return false;
         }
 
+        setErrorMessage("");
+
         let body = {
             beerId: BeerId,
             name: Name,
@@ -77,7 +79,8 @@ function CommentsList(props) {
         })
             .then(response => {
                 if(response.status === 204){
-                    fetchComments(endpoint)
+                    fetchComments(endpoint);
+                    setContent("");
                 }
             })
     }
@@ -105,7 +108,7 @@ function CommentsList(props) {
             <div className="new comment low wrap">
                 <input type="text" className="nickname-input inputbox" onChange={onNameHandler}
                     autoCorrect='false'></input>
-                <input type="text" className="comment-input inputbox" onChange={onContentHandler}></input>
+                <input type="text" className="comment-input inputbox" value={Content} onChange={onContentHandler}></input>
                 <button onClick={onCommentSubmitHandler} className='comment-submit-btn'>등록</button>
                 <div className='error-message low'>
                     <span>{ErrorMessage}</span>
