@@ -10,6 +10,7 @@ function CommentsList(props) {
     const [ErrorMessage, setErrorMessage] = useState("");
 
     const lastRef = useRef(null);
+    const textareaRef = useRef(null);
 
     useEffect(() => {
         setBeerId(props.beerId);
@@ -88,6 +89,14 @@ function CommentsList(props) {
             })
     }
 
+    const resizeHandler = () => {
+        if (textareaRef === null || textareaRef.current === null) {
+            return;
+        }
+        textareaRef.current.style.height = 'auto';
+        textareaRef.current.style.height = textareaRef.current.scrollHeight + 'px';
+    }
+
     return (
         <div className="comment-wrap low wrap">
             <div className="comments low wrap">
@@ -111,7 +120,8 @@ function CommentsList(props) {
             <div className="new comment low wrap">
                 <input type="text" className="nickname-input inputbox" onChange={onNameHandler}
                     autoCorrect='false'></input>
-                <input type="text" className="comment-input inputbox" value={Content} onChange={onContentHandler}></input>
+                <textarea ref={textareaRef} className="comment-input inputbox" value={Content} 
+                        onChange={onContentHandler} onKeyUp={resizeHandler()}></textarea>
                 <button onClick={onCommentSubmitHandler} className='comment-submit-btn'>등록</button>
                 <div className='error-message low'>
                     <span>{ErrorMessage}</span>
