@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Like from '../../common/Like/Like';
 import './CommentsList.css';
 
@@ -8,6 +8,8 @@ function CommentsList(props) {
     const [Comments, setComments] = useState([]);
     const [BeerId, setBeerId] = useState(0);
     const [ErrorMessage, setErrorMessage] = useState("");
+
+    const lastRef = useRef(null);
 
     useEffect(() => {
         setBeerId(props.beerId);
@@ -21,6 +23,7 @@ function CommentsList(props) {
             .then(response => {
                 if(response._embedded){
                     setComments(...[response._embedded.commentDtoes]);
+                    lastRef.current.scrollIntoView({behavior: "smooth", block: "center"});
                 }
         })
     }
@@ -89,7 +92,7 @@ function CommentsList(props) {
         <div className="comment-wrap low wrap">
             <div className="comments low wrap">
                 {Comments && Comments.map((comment, index) => (
-                    <div className="comment low">
+                    <div className="comment low" ref={Comments.length === index + 1 ? lastRef : undefined}>
                         <p>{comment.name} : {comment.content}</p>
                         <div className="comment-like">
                             <Like
