@@ -7,6 +7,7 @@ function CommentsList(props) {
     const [Content, setContent] = useState("");
     const [Comments, setComments] = useState([]);
     const [BeerId, setBeerId] = useState(0);
+    const [BeerNickname, setBeerNickname] = useState("");
     const [ErrorMessage, setErrorMessage] = useState("");
 
     const lastRef = useRef(null);
@@ -14,6 +15,7 @@ function CommentsList(props) {
 
     useEffect(() => {
         setBeerId(props.beerId);
+        setBeerNickname(props.beerNickname);
         const endpoint = props.apiLink.href;
         fetchComments(endpoint);
     }, [])
@@ -99,10 +101,15 @@ function CommentsList(props) {
 
     return (
         <div className="comment-wrap low wrap">
+            <span className='comment-title'>{BeerNickname}의 {Comments.length}개 코멘트</span>
             <div className="comments low wrap">
                 {Comments && Comments.map((comment, index) => (
-                    <div className="comment low" ref={Comments.length === index + 1 ? lastRef : undefined}>
-                        <p>{comment.name} : {comment.content}</p>
+                    <div className="comment low align-center" ref={Comments.length === index + 1 ? lastRef : undefined}>
+                        <p><span className='comment-name'>{comment.name}</span><br/>
+                            {comment.content && comment.content.split('\n').map(line => (
+                                <span className='comment-content'>{line}<br/></span>
+                            ))}
+                        </p>
                         <div className="comment-like">
                             <Like
                                 apiLinks = {comment._links}

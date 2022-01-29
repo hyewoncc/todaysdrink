@@ -69,6 +69,7 @@ function BeerDetail(props) {
                         {Beer.id && 
                             <CommentsList 
                                 beerId = {Beer.id} 
+                                beerNickname = {Beer.nickname} 
                                 apiLink = {Beer._links.comments}
                             />
                         }

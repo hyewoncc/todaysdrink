@@ -16,21 +16,41 @@
     background: transparent !important;
 }
 
+.comment-title {
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
 .comment.low {
     display: flex;
     justify-content: space-between;
     padding: 0px 16px 0px 8px;
 }
 
+.comment.low.align-center {
+    align-items: center;
+}
+
 .comment.low:hover {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .comments.low.wrap {
-    height: 304px;
+    height: 400px;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 8px;
+}
+
+.comment-name {
+    font-size: 18px;
+    color: #fff4b6;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.comment-content {
+    font-size: 16px;
 }
 
 .nickname-input {
@@ -83,6 +103,7 @@
     outline: none !important;
     transition: 0.2s;
     resize: none;
+    line-height: 21px;
 }
 
 .comment input[type="text"]:focus-visible {
