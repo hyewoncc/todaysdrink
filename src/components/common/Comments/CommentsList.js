@@ -9,6 +9,7 @@ function CommentsList(props) {
     const [BeerId, setBeerId] = useState(0);
     const [BeerNickname, setBeerNickname] = useState("");
     const [ErrorMessage, setErrorMessage] = useState("");
+    const [Reload, setReload] = useState(false);
 
     const lastRef = useRef(null);
     const textareaRef = useRef(null);
@@ -26,7 +27,10 @@ function CommentsList(props) {
             .then(response => {
                 if(response._embedded){
                     setComments(...[response._embedded.commentDtoes]);
-                    lastRef.current.scrollIntoView({behavior: "smooth", block: "center"});
+                    if(Reload){
+                        lastRef.current.scrollIntoView({behavior: "smooth", block: "center"});
+                        setReload(false);
+                    }
                 }
         })
     }
@@ -85,6 +89,7 @@ function CommentsList(props) {
         })
             .then(response => {
                 if(response.status === 204){
+                    setReload(true);
                     fetchComments(endpoint);
                     setContent("");
                 }
