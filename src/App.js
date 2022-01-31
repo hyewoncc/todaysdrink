@@ -8,11 +8,13 @@ import BeerDetail from './components/views/BeerDetail/BeerDetail';
 import BeerTypes from './components/views/BeerTypes/BeerTypes';
 import BeerMatch from './components/views/BeerMatch/BeerMatch';
 import Footer from './components/common/Footer/Footer';
+import ScrollToTop from './components/common/ScrollToTop/ScrollToTop';
 
 function App() {
   
   return (
     <Router>
+      <ScrollToTop />
       <Header />
 
       <div>
