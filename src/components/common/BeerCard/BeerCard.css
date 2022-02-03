@@ -22,6 +22,7 @@
 
 .card-title-wrap {
     width: 100%;
+    height: 18px;
     display: flex;
     justify-content: center;
     font-family: "DungGeunMo";

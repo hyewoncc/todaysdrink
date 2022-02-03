@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CommentsList from '../../common/Comments/CommentsList';
 import { API_URL } from '../../Config';
-import { BEERCARD_IMG_URL } from '../../Config';
+import { BEERCARD_IMG_URL, BEER_IMG_URL } from '../../Config';
 import BeerCard from '../../common/BeerCard/BeerCard';
 import './BeerDetail.css';
 
@@ -42,7 +42,7 @@ function BeerDetail(props) {
             <div className="info-container">
                 <div className="low">
                     <div className="beer-image">
-                        <img src={BEERCARD_IMG_URL + Beer.name + '/' + Beer.name + '01.png'}
+                        <img src={BEER_IMG_URL + Beer.name + '.png'}
                             alt={Beer.name}/>
                     </div>
                     <div className="beer-info-wrap">
