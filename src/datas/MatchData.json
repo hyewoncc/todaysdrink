@@ -2,26 +2,26 @@
     {
         "number": "1",
         "title": "도수는 어느 정도?",
-        "question": "alcohol",
+        "question": "Alcohol",
         "answers": [
         {
-            "answer": "high",
+            "answer": "HIGH",
             "explain": "높을 수록 좋다"
         },
         {
-            "answer": "middle",
+            "answer": "MIDDLE",
             "explain": "적당하게"
         },
         {
-            "answer": "low",
+            "answer": "LOW",
             "explain": "가볍게"
         },
         {
-            "answer": "zero",
+            "answer": "ZERO",
             "explain": "논알콜"
         },
         {
-            "answer": "none",
+            "answer": "NONE",
             "explain": "상관 없다"
         }]
     },
