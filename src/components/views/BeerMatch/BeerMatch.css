@@ -73,21 +73,27 @@
 }
 
 .matchimage-beer.step1 {
-    height: 30px;
-    object-position: 0 -114px;
-    padding-top: 114px;
+    height: 24px;
+    object-position: 0 -120px;
+    padding-top: 120px;
 }
 
 .matchimage-beer.step2 {
-    height: 60px;
-    object-position: 0 -84px;
-    padding-top: 84px;
+    height: 54px;
+    object-position: 0 -90px;
+    padding-top: 90px;
 }
 
 .matchimage-beer.step3 {
-    height: 90px;
-    object-position: 0 -54px;
-    padding-top: 54px;
+    height: 84px;
+    object-position: 0 -60px;
+    padding-top: 60px;
+}
+
+.matchimage-beer.step4 {
+    height: 114px;
+    object-position: 0 -30px;
+    padding-top: 30px;
 }
 
 .match-sheet {
@@ -118,6 +124,10 @@
 
 .submit-3 {
     right: 1200px;
+}
+
+.submit-4 {
+    right: 1600px;
 }
   
 .question {
